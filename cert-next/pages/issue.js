@@ -28,9 +28,7 @@ class Issue extends React.Component {
         <p>Successfully issued the certificate!
            You can view your certificate <Link href={`/cert/[id]`}
             as={`/cert/${id}`}>
-            <a>here</a></Link> and you can view your transaction <Link
-            href={`https://testnet.blockexplorer.com/tx/${transaction_hash}`}>
-            <a>here</a></Link></p>
+            <a>here</a></Link>!</p>
       </div>
     )
   }
