@@ -41,7 +41,7 @@ const Certificate = (props) => (
       <p />
       <p>Please bookmark this page for your future reference! </p>
       <p>You can download this certificate via this <Link
-        href={`http://localhost/api/cert/${props.data.id.substring(9)}.json`}>
+        href={`/api/cert/${props.data.id.substring(9)}.json`}>
         <a>link</a></Link></p>
       <p><strong>Important: </strong>Also, you can use this link for verification (just right click the link and press "Copy Link Address")!</p>
     </div>
