@@ -7,7 +7,8 @@ class Verify extends React.Component {
 
   state = {
     error: false,
-    response: null
+    response: null,
+    loading: false
   }
 
   resetState = () => {
@@ -15,14 +16,15 @@ class Verify extends React.Component {
   }
 
   verifyWithUrl = async (url) => {
+    this.setState({ loading: true })
     let url_response = await axios.get(url)
     let data = url_response.data
     await axios.post("/api/verify", data)
       .then(res => {
         console.log(res)
-        this.setState({ response: res })
+        this.setState({ response: res, loading: false,  })
       })
-      .catch(e => this.setState({ error: true })) 
+      .catch(e => this.setState({ error: true, loading: false,  })) 
   }
 
   verifyWithJsonFile = async () => {
@@ -43,13 +45,14 @@ class Verify extends React.Component {
   }
   
   render() {
-    const { response, error } = this.state;
+    const { loading, response, error } = this.state;
 
     return (
       <Layout>
         <div className='container margin-top-5'>
           <VerifyWithUrl verifyWithUrl={this.verifyWithUrl}/>
           {/* <VerifyWithJsonFile /> */}
+          {loading ? <p>Loading, please wait...</p> : <p />}
           {error ? <p>Sorry, we can't verify your certificate</p> : <p />}
           {response != null ? this.printResponse(response) : <p />}
           <button type="button" className="btn btn-secondary" onClick={this.resetState.bind(this)}>
