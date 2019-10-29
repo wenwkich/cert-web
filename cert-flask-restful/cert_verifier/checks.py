@@ -281,7 +281,7 @@ def create_verification_steps(certificate_model, transaction_info, issuer_info, 
         steps.append(embedded_signature_group)
 
     # transaction-anchored data. All versions must have this. In V2 we add an extra check for unmapped fields
-    detect_unmapped_fields = v2ish
+    detect_unmapped_fields = False
     transaction_signature_group = create_anchored_data_verification_group(certificate_model.signatures,
                                                                           chain,
                                                                           transaction_info,
