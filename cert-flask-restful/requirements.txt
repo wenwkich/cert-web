@@ -15,3 +15,12 @@ simplekv>=0.10.0
 tox>=3.0.0
 validators>=0.12.1
 jsonpath-rw>=1.4.0
+mock==2.0.0
+pycoin==0.80
+pyld>=1.0.3
+pysha3>=1.0.2
+python-bitcoinlib>=0.10.1
+jsonschema<3.0.0
+glob2==0.6
+functional>=0.4
+pyld>=1.0.3
