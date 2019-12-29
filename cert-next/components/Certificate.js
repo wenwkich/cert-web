@@ -12,9 +12,9 @@ const Certificate = (props) => (
       <strong> {props.data.badge.toDate}</strong> and did
       <strong> {props.data.badge.description}</strong> related work</p>
       <p />
-      <div className="text-center">
+      {/* <div className="text-center">
         <img src="/certificate.png" />    
-      </div>
+      </div> */}
       <hr />
       <p><strong>ID of certificate: </strong>{props.data.id.substring(9)}</p>
       <hr/>
