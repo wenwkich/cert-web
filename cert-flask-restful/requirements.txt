@@ -23,3 +23,5 @@ python-bitcoinlib>=0.10.1
 glob2==0.6
 functional>=0.4
 pyld>=1.0.3
+chainpoint==0.0.2
+
